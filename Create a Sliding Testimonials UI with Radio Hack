@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Testimonial Slider</title>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --bg: #f9fafb;
+      --text: #1f2937;
+      --card-bg: white;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    .slides {
+      display: flex;
+      overflow: hidden;
+      border-radius: 1rem;
+      position: relative;
+    }
+
+    .testimonial {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 2rem;
+      box-sizing: border-box;
+      background: var(--card-bg);
+      transition: transform 0.5s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .testimonial img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial h3 {
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    .testimonial p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .ratings {
+      color: gold;
+      margin: 0.5rem 0;
+    }
+
+    /* Slide control */
+    #t1:checked ~ .slides { transform: translateX(0); }
+    #t2:checked ~ .slides { transform: translateX(-100%); }
+    #t3:checked ~ .slides { transform: translateX(-200%); }
+
+    /* Indicators */
+    .indicators {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      gap: 0.5rem;
+    }
+
+    .indicators label {
+      width: 12px;
+      height: 12px;
+      background: #d1d5db;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #t1:checked ~ .indicators label[for="t1"],
+    #t2:checked ~ .indicators label[for="t2"],
+    #t3:checked ~ .indicators label[for="t3"] {
+      background: var(--primary);
+    }
+
+    @media (max-width: 600px) {
+      .testimonial {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>What Our Clients Say</h1>
+
+  <!-- Radio Inputs -->
+  <input type="radio" name="slider" id="t1" checked>
+  <input type="radio" name="slider" id="t2">
+  <input type="radio" name="slider" id="t3">
+
+  <!-- Slides -->
+  <div class="slider">
+    <div class="slides">
+      <!-- Testimonial 1 -->
+      <div class="testimonial">
+        <img src="https://i.pravatar.cc/100?img=1" alt="User 1">
+        <h3>Jane Doe</h3>
+        <small>CEO, Acme Inc.</small>
+        <div class="ratings">⭐⭐⭐⭐⭐</div>
+        <p>"This service changed the way we do business. 10/10!"</p>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial">
+        <img src="https://i.pravatar.cc/100?img=2" alt="User 2">
+        <h3>John Smith</h3>
+        <small>CTO, BetaTech</small>
+        <div class="ratings">⭐⭐⭐⭐</div>
+        <p>"Very professional team and excellent support."</p>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial">
+        <img src="https://i.pravatar.cc/100?img=3" alt="User 3">
+        <h3>Maria Lopez</h3>
+        <small>Designer, Creatives Co.</small>
+        <div class="ratings">⭐⭐⭐⭐⭐</div>
+        <p>"Loved the attention to detail and design quality."</p>
+      </div>
+    </div>
+
+    <!-- Indicators -->
+    <div class="indicators">
+      <label for="t1"></label>
+      <label for="t2"></label>
+      <label for="t3"></label>
+    </div>
+  </div>
+
+</body>
+</html>
