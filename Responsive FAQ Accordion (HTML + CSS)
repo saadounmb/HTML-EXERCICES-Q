@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Accordion</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .faq-container {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    details {
+      margin-bottom: 15px;
+    }
+
+    summary {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      position: relative;
+      padding-right: 30px;
+    }
+
+    summary::after {
+      content: '\002B';
+      font-size: 20px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: transform 0.3s ease;
+    }
+
+    details[open] summary::after {
+      content: '\2212'; /* Minus symbol for open state */
+      transform: rotate(180deg);
+    }
+
+    details p {
+      font-size: 16px;
+      color: #555;
+      padding: 10px 0;
+      margin: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    details[open] p {
+      opacity: 1;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .faq-container {
+        padding: 15px;
+      }
+
+      summary {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="faq-container">
+    <div class="faq-item">
+      <details>
+        <summary>What is the return policy?</summary>
+        <p>Our return policy allows you to return items within 30 days of purchase, as long as they are unused and in the original packaging.</p>
+      </details>
+    </div>
+    <div class="faq-item">
+      <details>
+        <summary>How can I track my order?</summary>
+        <p>You can track your order using the tracking number sent to your email once your order has shipped. Simply enter the tracking number on the courier's website.</p>
+      </details>
+    </div>
+    <div class="faq-item">
+      <details>
+        <summary>What payment methods are accepted?</summary>
+        <p>We accept all major credit cards, PayPal, and Apple Pay for your convenience.</p>
+      </details>
+    </div>
+  </div>
+
+</body>
+</html>
