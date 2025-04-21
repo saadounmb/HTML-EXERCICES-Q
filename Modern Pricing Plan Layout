@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing Table</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .pricing-table {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      animation: fadeInUp 1s ease;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .highlight {
+      border: 2px solid #007bff;
+      background: #eaf4ff;
+    }
+
+    .plan {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 36px;
+      margin: 15px 0;
+      color: #007bff;
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      color: #555;
+    }
+
+    .features li {
+      margin: 10px 0;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #005dc7;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pricing-table {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pricing-table">
+    <div class="card">
+      <div class="plan">Basic</div>
+      <div class="price">$9/mo</div>
+      <ul class="features">
+        <li>✔ 5 Projects</li>
+        <li>✔ 5GB Storage</li>
+        <li>✔ Basic Support</li>
+      </ul>
+      <button class="btn">Choose Plan</button>
+    </div>
+
+    <div class="card highlight">
+      <div class="plan">Pro <span style="font-size: 14px; color: #ff5733;">★ Popular</span></div>
+      <div class="price">$29/mo</div>
+      <ul class="features">
+        <li>✔ 50 Projects</li>
+        <li>✔ 50GB Storage</li>
+        <li>✔ Priority Support</li>
+      </ul>
+      <button class="btn">Choose Plan</button>
+    </div>
+
+    <div class="card">
+      <div class="plan">Enterprise</div>
+      <div class="price">$99/mo</div>
+      <ul class="features">
+        <li>✔ Unlimited Projects</li>
+        <li>✔ 1TB Storage</li>
+        <li>✔ 24/7 Dedicated Support</li>
+      </ul>
+      <button class="btn">Choose Plan</button>
+    </div>
+  </div>
+
+</body>
+</html>
